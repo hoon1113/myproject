@@ -3,6 +3,7 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     background: #f5f5f5;
     overflow-x: hidden; /* 가로 스크롤 방지 */
+    overflow-y: auto;
 }
 
 .header {
@@ -43,6 +44,7 @@ h1 {
     background-color: #f5f5f5;
     gap: 10px;
     padding: 10px 3vw;
+    margin-bottom: 0;
 }
 
 .menu-button {
@@ -75,9 +77,10 @@ h1 {
 
 .main-container {
     display: flex;
+    max-height: 600px;
     flex-wrap: wrap;
     padding: 3vh 3vw;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 90px);
     box-sizing: border-box;
     gap: 3vw;
 }
@@ -85,6 +88,7 @@ h1 {
 .sidebar {
     flex: 1 1 280px;
     max-width: 300px;
+    max-height: 600px;
     background-color: #f5f5f5;
     padding: 1em;
     border-right: 1px solid #ddd;
@@ -150,14 +154,15 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 1vh;
     box-sizing: border-box;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .campus-map {
     width: 100%;
     max-width: 1000px; /* 너비 제한 */
-    max-height: 80vh;  /* 화면 높이의 80%까지만 보이도록 제한 */
+    max-height: 65vh;  /* 화면 높이의 65%까지만 보이도록 제한 */
     height: auto;
     object-fit: contain;
     border-radius: 8px;
