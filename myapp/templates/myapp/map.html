@@ -18,8 +18,8 @@
     </div>
 
     <nav class="menu">
-        <a href="{% url 'busmap' %}" class="menu-button active">지도</a>
-        <a href="#" class="menu-button">식당</a>
+        <a href="{% url 'map' %}" class="menu-button active">지도</a>
+        <a href="{% url 'meal' %}" class="menu-button active">식당</a>
         <a href="#" class="menu-button">학교소통</a>
         <a href="#" class="menu-button">학교정보</a>
     </nav>
@@ -133,7 +133,7 @@
 
         <div class="map-container">
             <img src="{% static 'myapp/학교지도.png' %}" alt="학교지도" class="campus-map">
-            <p class="bus-link">▶ 버스 시간 보러 가기</p>
+            <a href="{% url 'busmap' %}" class="bus-link">▶ 버스 시간 보러 가기</a>
         </div>
     </div>
 <script>
