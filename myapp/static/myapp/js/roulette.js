@@ -1,5 +1,15 @@
 const $c = document.querySelector("#roulette-canvas");
 const ctx = $c.getContext(`2d`);
+// 캔버스 크기 자동 보정 (고해상도 디바이스 대응 포함)
+function resizeCanvas() {
+  const ratio = window.devicePixelRatio || 1;
+  $c.width = $c.offsetWidth * ratio;
+  $c.height = $c.offsetHeight * ratio;
+  ctx.setTransform(1, 0, 0, 1, 0, 0); // 기존 변환 초기화
+  ctx.scale(ratio, ratio); // 고해상도 대응 스케일
+}
+resizeCanvas();
+
 const menuAdd = document.querySelector('#menuAdd');
 const product = [];
 const colors = [];
@@ -30,7 +40,7 @@ const newMake = () => {
   }
 
   ctx.fillStyle = "#fff";
-  ctx.font = "10px Pretendard";
+  ctx.font = "500px Pretendard";
   ctx.textAlign = "left";
 
   for (let i = 0; i < product.length; i++) {
