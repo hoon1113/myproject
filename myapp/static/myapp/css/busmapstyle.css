@@ -1,0 +1,196 @@
+/* 전체 페이지 기본 설정 */
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #f5f5f5;
+}
+
+/* 헤더 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh 2vw;
+  background-color: #f5f5f5;
+}
+
+.logo {
+  width: 60px;
+  margin-right: 10px;
+}
+
+h1 {
+  margin: 0;
+  justify-content: left;
+  font-size: 2rem;
+}
+
+/* 사용자 정보 박스 */
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout {
+  background-color: #93c5fd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* 네비게이션 메뉴 */
+.menu {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #f5f5f5;
+  padding: 10px 0;
+}
+
+.menu-button {
+  padding: 10px 20px;
+  border: 2px solid #80b9f0;
+  border-radius: 20px;
+  background-color: white;
+  color: #1057a6;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: #1057a6;
+  color: white;
+}
+
+.menu-button.active {
+  background-color: #80b9f0;
+  color: white;
+}
+
+/* 메인 콘텐츠 영역 */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-container {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 2vh 2vw;
+}
+
+/* 교내버스 섹션 */
+.bus h2 {
+  text-align: center;
+  font-size: 1.5rem;
+
+}
+
+.campus-bus-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.col {
+  background-color: #f7fafe;
+  border: 2px solid #cde1f9;
+  border-radius: 10px;
+  width: 10vw;
+  min-width: 100px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  overflow: hidden;
+}
+
+.col .top {
+  background-color: #1057a6;
+  white-space: nowrap; /* 줄바꿈 방지 */
+  color: white;
+  padding: 10px;
+  height: 5vh;
+  width: 105%;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+}
+
+.col .bottom {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* 시내버스 섹션 */
+.city-bus-box {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2vw;
+  margin-top: 4vh;
+  align-items: center;
+}
+
+.terminal {
+  background-color: #004aa2;
+  color: white;
+  padding: 40px;
+  height: 11vh;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.routes {
+  background-color: white;
+  border: 1px solid #bbb;
+  padding: 20px;
+  height: 15vh;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col {
+    width: 80vw;
+    height: auto;
+  }
+
+  .city-bus-box {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .menu-button {
+    padding: 8px 16px;
+  }
+}
