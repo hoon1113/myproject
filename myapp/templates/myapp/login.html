@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CamPuzz 로그인</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/css/login.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <!-- 중앙 CamPuzz 로고 위치 -->
+            <img src="{% static 'myapp/로고원들.png' %}" alt="CPZ 로고" class="logo">
+        </div>
+        <div class="login-form">
+            <!-- ID와 비밀번호를 한 줄로 배치 -->
+            <div class="input-row">
+                <label for="id">ID :</label>
+                <input type="text" id="id" name="username" placeholder="아이디">
+            </div>
+            <div class="input-row">
+                <label for="pw">PW :</label>
+                <input type="password" id="pw" name="password" placeholder="비밀번호">
+            </div>
+            <!-- 버튼을 세로로 배치 -->
+            <div class="button-column">
+                <button type="button" onclick="alert('로그인 버튼 클릭')">로그인</button>
+                <button type="button" onclick="alert('회원가입 버튼 클릭')">회원가입</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

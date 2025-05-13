@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>map캠퍼스</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/mapstyle.css' %}">
+    <script src="{% static 'myapp/js/mapscript.js' %}"></script>
+</head>
+<body>
+    <div class="header">
+        <img src="{% static 'myapp/로고만.png' %}" alt="CPZ 로고" class="logo">
+        <h1>캠퍼스</h1>
+        <div class="user-box">
+            <span>000님</span>
+            <button class="logout">로그아웃</button>
+        </div>
+    </div>
+
+    <nav class="menu">
+        <a href="{% url 'busmap' %}" class="menu-button active">지도</a>
+        <a href="#" class="menu-button">식당</a>
+        <a href="#" class="menu-button">학교소통</a>
+        <a href="#" class="menu-button">학교정보</a>
+    </nav>
+    <hr class="menu-divider">
+    <div class="main-container">
+        <div class="sidebar">
+    <!-- 경상대학 -->
+    <div class="dropdown">
+        <button class="dropdown-btn">경상대학 ▼</button>
+        <div class="dropdown-content">
+            <p>경영학과</p>
+            <p>회계학과</p>
+            <p>경제통상학과</p>
+            <p>무역학과</p>
+            <p>관광경영학과</p>
+            <p>호텔외식경영학과</p>
+        </div>
+    </div>
+
+    <!-- 인문사회대학 -->
+    <div class="dropdown">
+        <button class="dropdown-btn">인문사회대학 ▼</button>
+        <div class="dropdown-content">
+            <p>법학과</p>
+            <p>경찰행정학과</p>
+            <p>신문방송학과</p>
+            <p>사회복지학과</p>
+            <p>지적학과</p>
+            <p>광고홍보학과</p>
+            <p>영어영문학과</p>
+            <p>문헌정보학과</p>
+        </div>
+    </div>
+
+    <!-- 공과대학 -->
+    <div class="dropdown">
+        <button class="dropdown-btn">공과대학 ▼</button>
+        <div class="dropdown-content">
+            <p>데이터사이언스학과</p>
+            <p>인공지능소프트웨어학과</p>
+            <p>디지털보안학과</p>
+            <p>건축학과(5년)</p>
+            <p>건축공학과</p>
+            <p>토목공학과</p>
+            <p>조경학과</p>
+            <p>환경공학과</p>
+            <p>전자공학과</p>
+            <p>시스템반도체공학과</p>
+            <p>전기제어공학과</p>
+            <p>에너지융합공학과</p>
+        </div>
+    </div>
+
+    <!-- 사범대학 -->
+    <div class="dropdown">
+        <button class="dropdown-btn">사범대학 ▼</button>
+        <div class="dropdown-content">
+            <p>수학교육과</p>
+            <p>국어교육과</p>
+            <p>교직과</p>
+        </div>
+    </div>
+
+    <!-- 예술대학 -->
+    <div class="dropdown">
+        <button class="dropdown-btn">예술대학 ▼</button>
+        <div class="dropdown-content">
+            <p>산업디자인학과</p>
+            <p>시각디자인학과</p>
+            <p>공예디자인학과</p>
+            <p>아트앤패션디자인학과</p>
+            <p>디지털미디어디자인학과</p>
+            <p>만화애니메이션학과</p>
+            <p>영화영상학과</p>
+            <p>연극학과</p>
+            <p>생활체육학과</p>
+        </div>
+    </div>
+
+    <!-- 보건의료과학대학 -->
+    <div class="dropdown">
+        <button class="dropdown-btn">보건의료과학대학 ▼</button>
+        <div class="dropdown-content">
+            <p>간호학과</p>
+            <p>치위생학과</p>
+            <p>방사선학과</p>
+            <p>물리치료학과</p>
+            <p>작업치료학과</p>
+            <p>임상병리학과</p>
+            <p>동물보건복지학과</p>
+            <p>바이오의약학과</p>
+            <p>제약공학과</p>
+            <p>스포츠재활학과</p>
+            <p>의료경영학과</p>
+        </div>
+    </div>
+
+    <!-- 직할학부 -->
+    <div class="dropdown">
+        <button class="dropdown-btn">직할학부 ▼</button>
+        <div class="dropdown-content">
+            <p>항공운항학과</p>
+            <p>항공기계공학과</p>
+            <p>무인항공기학과</p>
+            <p>항공서비스학과</p>
+            <p>군사학과</p>
+        </div>
+    </div>
+</div>
+
+
+        <div class="map-container">
+            <img src="{% static 'myapp/학교지도.png' %}" alt="학교지도" class="campus-map">
+            <p class="bus-link">▶ 버스 시간 보러 가기</p>
+        </div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdownBtns = document.querySelectorAll('.dropdown-btn');
+    dropdownBtns.forEach(function(btn) {
+        btn.addEventListener('click', function(event) {
+            event.stopPropagation();
+            var isActive = this.classList.contains('active');
+            dropdownBtns.forEach(function(otherBtn) {
+                otherBtn.classList.remove('active');
+                otherBtn.nextElementSibling.classList.remove('active');
+                otherBtn.innerHTML = otherBtn.innerHTML.replace('▲', '▼');
+            });
+            if (!isActive) {
+                this.classList.add('active');
+                this.nextElementSibling.classList.add('active');
+                this.innerHTML = this.innerHTML.replace('▼', '▲');
+            }
+        });
+    });
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.dropdown')) {
+            dropdownBtns.forEach(function(btn) {
+                btn.classList.remove('active');
+                btn.nextElementSibling.classList.remove('active');
+                btn.innerHTML = btn.innerHTML.replace('▲', '▼');
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>

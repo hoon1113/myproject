@@ -1,0 +1,76 @@
+body {
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 15px; /* 로고 아래 간격을 조금 줄임 */
+}
+
+.login-form {
+    display: inline-block;
+    text-align: left;
+    margin-top: -10px; /* 로그인 폼을 아주 살짝 위로 이동 */
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0; /* 간격 살짝 줄임 */
+}
+
+.input-row label {
+    font-size: 1.2em;
+    margin-right: 8px;
+    color: #333;
+}
+
+.input-row input {
+    width: 240px;
+    padding: 10px;
+    font-size: 1.1em;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    outline: none;
+}
+
+.input-row input:focus {
+    border-color: #88c5f5;
+    background-color: #ffffff;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px; /* 버튼 부분 간격도 약간 줄임 */
+}
+
+.button-column button {
+    width: 160px;
+    padding: 10px;
+    margin: 5px 0; /* 버튼 간격 줄임 */
+    font-size: 1.2em;
+    background-color: #88c5f5;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-column button:hover {
+    background-color: #527ebf;
+}
