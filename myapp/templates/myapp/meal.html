@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>map캠퍼스</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/mealstyle.css' %}">
+</head>
+<body>
+  <div class="header">
+    <img src="{% static 'myapp/로고만.png' %}" alt="CPZ 로고" class="logo">
+    <h1>캠퍼스</h1>
+    <div class="user-box">
+      <span>000님</span>
+      <button class="logout">로그아웃</button>
+    </div>
+  </div>
+
+<nav class="menu">
+  <a href="{% url 'busmap' %}" class="menu-button active">지도</a>
+  <a href="{% url 'meal' %}" class="menu-button">식당</a>
+  <a href="#" class="menu-button">학교소통</a>
+  <a href="#" class="menu-button">학교정보</a>
+</nav>
+
+<div class="main-container">
+    <!-- 학식 -->
+    <section class="meal today-meal">
+      <h2>오늘의 학식</h2>
+      <div class="today-meal-grid">
+        <div class="restaurant">
+          <div class="restaurant-title">학생 식당</div>
+          <div class="col1"></div>
+        </div>
+        <div class="restaurant">
+          <div class="restaurant-title">교직원 식당</div>
+          <div class="col2"></div>
+        </div>
+        <div class="restaurant">
+          <div class="restaurant-title">경상대학 식당</div>
+          <div class="col3"></div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 룰렛 및 지도 -->
+    <section class="roulette">
+      <div class="sub">
+        <h2>오늘 점심 뭐 먹지?</h2>
+
+        <div id="menu">
+            <canvas id="roulette-canvas" width="400" height="400"></canvas>
+            <button class="roulette-button" onclick="rotate()">돌려돌려 돌림판</button>
+            <div id="addDiv">
+              <input type="text" id="menuAdd">
+              <button class="roulette-button" onclick="add()">메뉴 추가</button>
+            </div>
+        </div>
+          <script src="{% static 'myapp/js/roulette.js' %}"></script>
+      </div>
+    </section>
+  </body>
+</html>

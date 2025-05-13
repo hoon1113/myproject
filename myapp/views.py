@@ -23,3 +23,6 @@ def map_view(request):
         "직할학부": ["항공운항학과", "항공기계공학과", "무인항공기학과", "항공서비스학과", "군사학과"]
     }
     return render(request, 'myapp/map.html', {'college_data': college_data})
+
+def meal(request):
+    return render(request, 'myapp/meal.html')

@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #f5f5f5;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 60px;
+  margin-right: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.user-box {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout {
+  background-color: #93c5fd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  padding-left: 100px;
+  background-color: #f5f5f5;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.menu-button {
+  padding: 10px 20px;
+  border: 2px solid #80b9f0;
+  border-radius: 20px;
+  background-color: white;
+  color: #1057a6;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: #1057a6;
+  color: white;
+}
+
+.menu-button.active {
+  background-color: #80b9f0;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 10px;
+  height: 1000px;
+}
+
+.meal h2 {
+  text-align: center;
+}
+
+.today-meal-grid {
+  justify-content: center;
+  gap: 50px;
+  margin-top: 10px;
+  height: 150px;
+  display: flex;
+}
+
+.restaurant{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurant-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.col1{
+  width: 150px;
+  height: 200px;
+  background-color: #D8EAFE;
+  border: 2px solid #7CAFE1;
+  border-radius: 10px;
+  float: left;
+  text-align: center;
+}
+
+.col2{
+  width: 150px;
+  height: 200px;
+  background-color: #D8EAFE;
+  border: 2px solid #7CAFE1;
+  border-radius: 10px;
+  float: left;
+  text-align: center;
+}
+
+.col3{
+  width: 150px;
+  height: 200px;
+  background-color: #D8EAFE;
+  border: 2px solid #7CAFE1;
+  border-radius: 10px;  
+  float: left;
+  text-align: center;
+}
+
+.sub {
+  width: 100%;
+  height: auto;
+  background-color: f5f5f5;
+  float: right;
+}
+.sub h2 {
+  text-align: center;
+}
+
+canvas {
+  margin-top : 100px;  
+  transition: 2s;
+}
+
+.roulette-button {
+  z-index : 1000;
+  background: #febf00;
+  margin-top: 1rem;
+  padding: .8rem 1.8rem;
+  border: none;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.roulette-button:active {
+  background: #444;
+  color: #f9f9f9;
+}
+
+#menu {
+  width: 100%;
+  height : 960px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  text-align : center;
+  flex-direction: column;
+  position: relative;
+}
+
+#menu::before {
+  margin-top : 100px; 
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  border-radius: 5px;
+  background: #000;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 22;
+}
